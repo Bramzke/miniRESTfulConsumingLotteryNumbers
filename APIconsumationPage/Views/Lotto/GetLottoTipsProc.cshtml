@@ -1,0 +1,27 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    int k = 0, i = 0;
+}
+@model IEnumerable<int>
+
+<ul>
+
+    @foreach (var item in Model)
+    {
+        if (k % 6 == 0)
+        {
+            i++;
+            <li><h6>@(i). Tipp:</h6></li>
+        }
+        <li style="display: inline">@item &nbsp</li>
+        k++;
+        if (k % 6 == 0)
+        {
+            <li style="list-style: none">------------------</li>
+        }
+    }
+
+</ul>
+
